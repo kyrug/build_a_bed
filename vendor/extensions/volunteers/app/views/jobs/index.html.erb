@@ -1,0 +1,15 @@
+<h1>All Jobs</h1>
+<table>
+<% for job in @jobs %>
+  <tr><td><%= job.name %></td><td> <%= job.quantity %></td><td><%= link_to('edit', :action => 'edit', :id => job.id) %></td></tr>
+<% end %>
+</table>
+
+<% form_for @job do |j| %>
+  <%= j.label :name %>
+  <%= j.text_field :name %><br />
+  <%= j.label :quantity %> 
+  <%= j.text_field :quantity %><br />
+  <%= submit_tag 'Create' %>
+<% end %>
+
