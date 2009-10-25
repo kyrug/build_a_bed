@@ -7632,3 +7632,61 @@ Completed in 112ms (View: 65, DB: 9) | 200 OK [http://localhost/admin/volunteers
   [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
   [4;35;1mPage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT DISTINCT class_name FROM pages WHERE class_name <> '' AND class_name IS NOT NULL[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#show_page (for 127.0.0.1 at 2009-10-24 23:45:40) [GET]
+  Parameters: {"url"=>["rss"], "action"=>"show_page", "controller"=>"site"}
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_mtime
+Cache read: Radiant.cache_file
+Cache read: Radiant::Config
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_mtime
+Cache read: Radiant.cache_file
+Cache read: Radiant::Config
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`parent_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPage Load (1.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`slug` = 'rss') AND (`pages`.parent_id = 1) ORDER BY virtual DESC, title ASC LIMIT 1[0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;35;1mLayout Columns (7.2ms)[0m   [0mSHOW FIELDS FROM `layouts`[0m
+  [4;36;1mLayout Load (1.6ms)[0m   [0;1mSELECT * FROM `layouts` WHERE (`layouts`.`id` = 3) ORDER BY name[0m
+  [4;35;1mPagePart Load (0.4ms)[0m   [0mSELECT * FROM `page_parts` WHERE (`page_parts`.page_id = 3) ORDER BY id, name[0m
+  [4;36;1mPagePart Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `page_parts`[0m
+  [4;35;1mPagePart Load (0.3ms)[0m   [0mSELECT * FROM `page_parts` WHERE (`page_parts`.`name` = 'body') AND (`page_parts`.page_id = 3) ORDER BY id LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`parent_id` IS NULL) LIMIT 1[0m
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`slug` = 'articles') AND (`pages`.parent_id = 1) ORDER BY virtual DESC, title ASC LIMIT 1[0m
+  [4;36;1mArchivePage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_file
+Cache read: Radiant.cache_mtime
+Cache read: Radiant.cache_file
+Cache read: Radiant::Config
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.parent_id = 4 AND ((virtual = 0) and (status_id = 100))) ORDER BY published_at DESC, virtual DESC, title ASC LIMIT 10[0m
+  [4;36;1mPagePart Load (0.3ms)[0m   [0;1mSELECT * FROM `page_parts` WHERE (`page_parts`.page_id = 8) ORDER BY id, name[0m
+  [4;35;1mPagePart Load (0.2ms)[0m   [0mSELECT * FROM `page_parts` WHERE (`page_parts`.`name` = 'body') AND (`page_parts`.page_id = 8) ORDER BY id LIMIT 1[0m
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;36;1mPagePart Load (0.4ms)[0m   [0;1mSELECT * FROM `page_parts` WHERE (`page_parts`.page_id = 6) ORDER BY id, name[0m
+  [4;35;1mPagePart Load (0.2ms)[0m   [0mSELECT * FROM `page_parts` WHERE (`page_parts`.`name` = 'body') AND (`page_parts`.page_id = 6) ORDER BY id LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+  [4;36;1mPagePart Load (0.4ms)[0m   [0;1mSELECT * FROM `page_parts` WHERE (`page_parts`.page_id = 5) ORDER BY id, name[0m
+  [4;35;1mPagePart Load (0.3ms)[0m   [0mSELECT * FROM `page_parts` WHERE (`page_parts`.`name` = 'body') AND (`page_parts`.page_id = 5) ORDER BY id LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`id` = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`id` = 1) [0m
+Completed in 275ms (DB: 20) | 200 [http://localhost/rss/]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mPage Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT DISTINCT class_name FROM pages WHERE class_name <> '' AND class_name IS NOT NULL[0m
