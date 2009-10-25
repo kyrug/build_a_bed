@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Article RSS Feed</title>
+    <link>http://your-web-site.com/rss/</link>
+    <language>en-us</language>
+    <ttl>40</ttl>
+    <description>The main blog feed for my Web site.</description>
+    
+    
+        <item>
+          <title>Third Post</title>
+          <description>This is the third post.</description>
+          <pubDate>Thu, 22 Oct 2009 20:34:39 GMT</pubDate>
+          <guid>http://your-web-site.com/articles/2009/10/22/third-post/</guid>
+          <link>http://your-web-site.com/articles/2009/10/22/third-post/</link>
+        </item>
+    
+        <item>
+          <title>Second Post</title>
+          <description>&lt;p&gt;This post uses &lt;strong&gt;Markdown&lt;/strong&gt;.&lt;/p&gt;</description>
+          <pubDate>Sat, 10 Jun 2006 00:00:00 GMT</pubDate>
+          <guid>http://your-web-site.com/articles/2006/06/10/second-post/</guid>
+          <link>http://your-web-site.com/articles/2006/06/10/second-post/</link>
+        </item>
+    
+        <item>
+          <title>First Post</title>
+          <description>&lt;p&gt;This post uses &lt;a href=&quot;http://www.textism.com/tools/textile/&quot;&gt;textile&lt;/a&gt;.&lt;/p&gt;</description>
+          <pubDate>Fri, 09 Jun 2006 00:00:00 GMT</pubDate>
+          <guid>http://your-web-site.com/articles/2006/06/09/first-post/</guid>
+          <link>http://your-web-site.com/articles/2006/06/09/first-post/</link>
+        </item>
+    
+    
+  </channel>
+</rss>
+

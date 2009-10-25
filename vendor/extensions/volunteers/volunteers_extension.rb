@@ -13,6 +13,7 @@ class VolunteersExtension < Radiant::Extension
   #end
   define_routes do |map|
     map.resources :jobs, :path_prefix => '/admin'
+    map.resources :volunteers, :path_prefix => '/admin'
   end
   
   def activate

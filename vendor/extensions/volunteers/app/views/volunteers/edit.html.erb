@@ -1,0 +1,15 @@
+<h2>Editing Volunteer</h2>
+<% form_for @volunteer do |v| %>
+  <%= v.label :first_name %>
+  <%= v.text_field :first_name %><br />
+  <%= v.label :lastname %>
+  <%= v.text_field :last_name %><br />
+  <%= v.label :phone %>
+  <%= v.text_field :phone %><br />
+  <%= v.label :email %>
+  <%= v.text_field :email %><br />
+  <%= v.label :job %>
+  <%= collection_select(:volunteer, :job_id, Job.all, :id, :name, {:prompt => true}) %><br />
+  <%= submit_tag 'Update' %> or <%= link_to "cancel", volunteers_path %>
+<% end %>
+
