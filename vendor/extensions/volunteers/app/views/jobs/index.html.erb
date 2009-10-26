@@ -1,10 +1,12 @@
 <h1>All Jobs</h1>
+<strong>Desc. Needed / Available</strong>
 <table>
 <% for job in @jobs %>
-  <tr><td><%= job.name %></td><td> <%= job.quantity %></td><td><%= link_to('edit', :action => 'edit', :id => job.id) %></td></tr>
+  <tr><td><%= job.name %></td><td> <%= job.quantity %> / <%= job.volunteers.count %></td><td><%= link_to('edit', :action => 'edit', :id => job.id) %></td></tr>
 <% end %>
 </table>
-
+<hr />
+<h2>New Job</h2>
 <% form_for @job do |j| %>
   <%= j.label :name %>
   <%= j.text_field :name %><br />
