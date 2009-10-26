@@ -1,8 +1,17 @@
 <h1>All Jobs</h1>
-<strong>Desc. Needed / Available</strong>
 <table>
+  <tr>
+    <th>Desc.</th>
+    <th>Need</th>
+    <th>Avail.</th>
+  </tr>
 <% for job in @jobs %>
-  <tr><td><%= job.name %></td><td> <%= job.quantity %> / <%= job.volunteers.count %></td><td><%= link_to('edit', :action => 'edit', :id => job.id) %></td></tr>
+  <tr>
+    <td><%= job.name %></td>
+    <td> <%= job.quantity %></td>
+    <td><%= job.volunteers.count %></td>
+    <td><%= link_to('edit', :action => 'edit', :id => job.id) %></td>
+  </tr>
 <% end %>
 </table>
 <hr />
