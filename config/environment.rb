@@ -74,5 +74,7 @@ Radiant::Initializer.run do |config|
     ActiveSupport::Inflector.inflections do |inflect|
       inflect.uncountable 'config'
     end
+    Radiant::Config['admin.title']='Build-a-Bed'
+    Radiant::Config['admin.subtitle']='Making bedtime a priority'
   end
 end
