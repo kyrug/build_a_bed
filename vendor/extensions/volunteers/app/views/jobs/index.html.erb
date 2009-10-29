@@ -1,3 +1,20 @@
+<h2>New Job</h2>
+<% form_for @job do |j| %>
+  <table>
+    <tr>
+      <td><%= j.label :name %></td>
+      <td><%= j.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= j.label :quantity %></td>
+      <td><%= j.text_field :quantity %></td>
+    </tr>
+  </table>
+  <%= submit_tag 'Create' %>
+<% end %>
+
+<hr />
+
 <h1>All Jobs</h1>
 <table>
   <tr>
@@ -14,13 +31,3 @@
   </tr>
 <% end %>
 </table>
-<hr />
-<h2>New Job</h2>
-<% form_for @job do |j| %>
-  <%= j.label :name %>
-  <%= j.text_field :name %><br />
-  <%= j.label :quantity %> 
-  <%= j.text_field :quantity %><br />
-  <%= submit_tag 'Create' %>
-<% end %>
-

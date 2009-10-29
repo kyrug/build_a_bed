@@ -1,15 +1,31 @@
 <h1>New Volunteer</h1>
 <% form_for @volunteer do |v| %>
-  <%= v.label :first_name %>
-  <%= v.text_field :first_name %><br />
-  <%= v.label :last_name %> 
-  <%= v.text_field :last_name %><br />
-  <%= v.label :phone %>
-  <%= v.text_field :phone %><br />
-  <%= v.label :email %>
-  <%= v.text_field :email %><br />
-  <%= v.label :job %>
-  <%= collection_select(:volunteer, :job_id, Job.all, :id, :name, {:prompt => true}) %><br />
+  <table>
+    <tr>
+      <td><%= v.label :first_name %></td>
+      <td><%= v.text_field :first_name %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :last_name %></td> 
+      <td><%= v.text_field :last_name %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :phone %></td>
+      <td><%= v.text_field :phone %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :email %></td>
+      <td><%= v.text_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :job %></td>
+      <td>
+        <%= collection_select(
+          :volunteer, :job_id, Job.all, :id, :name, {:prompt => true}
+        ) %>
+      </td>
+    </tr>
+  </table>
   <%= submit_tag 'Create' %>
 <% end %>
 <hr />
@@ -23,6 +39,12 @@
     <th scope="col">Admin Actions</th>
   </tr>
 <% for volunteer in @volunteers %>
-  <tr><td><%= volunteer.first_name %> <%= volunteer.last_name %></td><td> <%= volunteer.phone %></td><td> <%= mail_to volunteer.email %></td><td><%= volunteer.job.name %></td><td><%= link_to('edit', :action => 'edit', :id => volunteer.id) %></td></tr>
+  <tr>
+    <td><%= volunteer.first_name %> <%= volunteer.last_name %></td>
+    <td> <%= volunteer.phone %></td>
+    <td> <%= mail_to volunteer.email %></td>
+    <td><%= volunteer.job.name %></td>
+    <td><%= link_to('edit', :action => 'edit', :id => volunteer.id) %></td>
+  </tr>
 <% end %>
 </table>

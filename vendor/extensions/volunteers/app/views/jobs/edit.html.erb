@@ -1,6 +1,14 @@
 <% form_for @job do |j| %>
-  <%= j.text_field :name %><br />
-  <%= j.text_field :quantity %><br />
+  <table>
+    <tr>
+      <td><%= j.label :name %></td>
+      <td><%= j.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= j.label :quantity %></td>
+      <td><%= j.text_field :quantity %></td>
+    </tr>
+  </table>
   <%= submit_tag 'Update' %>
 <% end %>
 
