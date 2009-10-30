@@ -1,3 +1,29 @@
 = Volunteers
 
-Description goes here
+== USAGE
+
+<r:volunteer>
+
+  <r:if_success>
+    Thank you for your submission!
+  </r:if_success>
+
+  <r:unless_success>
+
+  <r:form>
+    <p>First Name:<br/>
+       <r:first_name /> <r:if_error on="first_name"><span class="error">Please enter your first name.</span></r:if_error></p>
+    <p>Last Name:<br/>
+       <r:last_name /> <r:if_error on="last_name"><span class="error">Please enter your last name.</span></r:if_error></p>
+    <p>Phone:<br/>
+       <r:phone /> <r:if_error on="phone"><span class="error">Please enter your phone number.</span></r:if_error></p>
+    <p>Email:<br/>
+       <r:email /> <r:if_error on="email"><span class="error">Please enter your email.</span></r:if_error></p>
+    <p>Job:<br/>
+       <r:job_select /> <r:if_error on="job"><span class="error">Please select a job.</span></r:if_error></p>
+
+    <input type="submit" value="Submit" />
+  </r:form>
+
+  </r:unless_success>
+</r:volunteer>
