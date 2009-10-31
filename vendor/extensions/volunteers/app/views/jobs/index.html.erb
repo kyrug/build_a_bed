@@ -16,14 +16,15 @@
 <hr />
 
 <h1>All Jobs</h1>
-<table>
+<table id="jobtable">
   <tr>
     <th>Desc.</th>
     <th>Need</th>
     <th>Avail.</th>
+    <th>Admin Actions</th>
   </tr>
 <% for job in @jobs %>
-  <tr>
+  <tr class="<%= cycle("odd", "even") %>">
     <td><%= job.name %></td>
     <td> <%= job.quantity %></td>
     <td><%= job.volunteers.count %></td>

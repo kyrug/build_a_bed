@@ -30,21 +30,25 @@
 <% end %>
 <hr />
 <h1>All Volunteers</h1>
-<table>
-  <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Phone</th>
-    <th scope="col">Email</th>
-    <th scope="col">Job</th>
-    <th scope="col">Admin Actions</th>
-  </tr>
-<% for volunteer in @volunteers %>
-  <tr>
-    <td><%= volunteer.first_name %> <%= volunteer.last_name %></td>
-    <td> <%= volunteer.phone %></td>
-    <td> <%= mail_to volunteer.email %></td>
-    <td><%= volunteer.job.name %></td>
-    <td><%= link_to('edit', :action => 'edit', :id => volunteer.id) %></td>
-  </tr>
-<% end %>
+<table id="voltable">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Job</th>
+      <th scope="col">Admin Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for volunteer in @volunteers %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= volunteer.first_name %> <%= volunteer.last_name %></td>
+        <td> <%= volunteer.phone %></td>
+        <td> <%= mail_to volunteer.email %></td>
+        <td><%= volunteer.job.name %></td>
+        <td><%= link_to('edit', :action => 'edit', :id => volunteer.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
