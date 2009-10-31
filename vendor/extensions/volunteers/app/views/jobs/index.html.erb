@@ -1,5 +1,6 @@
 <h2>New Job</h2>
 <% form_for @job do |j| %>
+  <%= j.error_messages %>
   <table>
     <tr>
       <td><%= j.label :name %></td>
