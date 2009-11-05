@@ -22,11 +22,13 @@ class VolunteersController < ApplicationController
   def create
     if params[:volunteer]
       @volunteer = Volunteer.new(params[:volunteer])
-      @volunteer.save
-      flash[:info] = 'volunteer Successfully Created'
-    else
-      flash[:error] = 'No volunteer Specified'
+      if @volunteer.save
+        flash[:info] = 'Volunteer Successfully Created'
+      else
+       flash[:error] = @volunteer.errors.full_messages.first
+      end
     end
+    puts flash.inspect
     redirect_to :action => :index
   end
 end

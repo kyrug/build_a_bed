@@ -19,14 +19,14 @@ class Volunteer < ActiveRecord::Base
   
   private
     def capitalize_names
-      self.firstname.capitalize!
-      if self.lastname.include? "-"
+      self.first_name.capitalize!
+      if self.last_name.include? "-"
         pieces_array = self.lastname.split("-")
         pieces_array.each { |e| e.capitalize! }
         joined = pieces_array.join("-")
-        self.lastname = joined
+        self.last_name = joined
       else
-        self.lastname.capitalize!
+        self.last_name.capitalize!
       end
     end
 end

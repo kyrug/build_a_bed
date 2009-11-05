@@ -22,10 +22,11 @@ class JobsController < ApplicationController
   def create
     if params[:job]
       @job = Job.new(params[:job])
-      @job.save
-      flash[:info] = 'Job Successfully Created'
-    else
-      flash[:error] = 'No Job Specified'
+      if @job.save
+        flash[:info] = 'Job Successfully Created'
+      else
+        flash[:error] = @job.errors.full_messages.first
+      end
     end
     redirect_to :action => :index
   end
