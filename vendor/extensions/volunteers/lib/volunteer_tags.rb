@@ -50,6 +50,17 @@ module VolunteerTags
   end
 
   desc %{
+    Renders a submit button for all dis job signup stuff.
+
+    *Usage:*
+    <pre><code><r:volunteer:submit /></code></pre>
+  }
+  tag 'volunteer:form:submit' do |tag|
+    volunteer = tag.locals.page.last_volunteer
+    %{<input type="submit" value="Create" name="commit" />}
+  end
+
+  desc %{
     Expands inner tags if the volunteer isn't valid.
 
     *Usage:*
