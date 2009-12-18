@@ -1,5 +1,5 @@
-<h2>New Job</h2>
-<% form_for @job do |j| %>
+<h2>New Donation Request</h2>
+<% form_for @donation_request do |j| %>
   <%= j.error_messages %>
   <table>
     <tr>
@@ -20,8 +20,8 @@
 
 <hr />
 
-<h1>All Jobs</h1>
-<table id="jobtable">
+<h1>All Donation Requests</h1>
+<table id="donreqtable">
   <tr>
     <th>Name</th>
     <th>Desc.</th>
@@ -29,13 +29,13 @@
     <th>Avail.</th>
     <th>Admin Actions</th>
   </tr>
-<% for job in @jobs %>
+<% for donation_request in @donation_requests %>
   <tr class="<%= cycle("odd", "even") %>">
-    <td><%= job.name %></td>
-    <td><%= job.description %></td>
-    <td> <%= job.quantity %></td>
-    <td><%= job.volunteers.count %></td>
-    <td><%= link_to('edit', :action => 'edit', :id => job.id) %></td>
+    <td><%= donation_request.name %></td>
+    <td><%= donation_request.description %></td>
+    <td> <%= donation_request.quantity %></td>
+    <td><%= donation_request.quantity_donated %></td>
+    <td><%= link_to('edit', :action => 'edit', :id => donation_request.id) %></td>
   </tr>
 <% end %>
 </table>

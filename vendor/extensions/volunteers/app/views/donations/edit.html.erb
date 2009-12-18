@@ -1,0 +1,31 @@
+<h2>Editing Donation</h2>
+<% form_for @donation do |v| %>
+  <table>
+    <tr>
+      <td><%= v.label :first_name %></td>
+      <td><%= v.text_field :first_name %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :last_name %></td> 
+      <td><%= v.text_field :last_name %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :phone %></td>
+      <td><%= v.text_field :phone %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :email %></td>
+      <td><%= v.text_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= v.label :donation_request %></td>
+      <td>
+        <%= collection_select(
+          :donation, :donation_request_id, DonationRequest.all, :id, :name, {:prompt => true}
+        ) %>
+      </td>
+    </tr>
+  </table>
+  <%= submit_tag 'Update' %> or <%= link_to "cancel", donations_path %>
+<% end %>
+
