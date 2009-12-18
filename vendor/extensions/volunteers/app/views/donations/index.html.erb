@@ -1,26 +1,26 @@
 <h1>New Donation</h1>
 
-<% form_for @donation do |v| %>
-  <%= v.error_messages %>
+<% form_for @donation do |d| %>
+  <%= d.error_messages %>
   <table>
     <tr>
-      <td><%= v.label :first_name %></td>
-      <td><%= v.text_field :first_name %></td>
+      <td><%= d.label :first_name %></td>
+      <td><%= d.text_field :first_name %></td>
     </tr>
     <tr>
-      <td><%= v.label :last_name %></td> 
-      <td><%= v.text_field :last_name %></td>
+      <td><%= d.label :last_name %></td> 
+      <td><%= d.text_field :last_name %></td>
     </tr>
     <tr>
-      <td><%= v.label :phone %></td>
-      <td><%= v.text_field :phone %></td>
+      <td><%= d.label :phone %></td>
+      <td><%= d.text_field :phone %></td>
     </tr>
     <tr>
-      <td><%= v.label :email %></td>
-      <td><%= v.text_field :email %></td>
+      <td><%= d.label :email %></td>
+      <td><%= d.text_field :email %></td>
     </tr>
     <tr>
-      <td><%= v.label :donation_request %></td>
+      <td><%= d.label :donation_request %></td>
       <td>
         <%= collection_select(
           :donation, :donation_request_id, DonationRequest.all, :id, :name, {:prompt => true}
@@ -28,8 +28,8 @@
       </td>
     </tr>
     <tr>
-      <td><%= v.label :quantity %></td>
-      <td><%= v.text_field :quantity %></td>
+      <td><%= d.label :quantity %></td>
+      <td><%= d.text_field :quantity %></td>
     </tr>
   </table>
   <%= submit_tag 'Create' %>

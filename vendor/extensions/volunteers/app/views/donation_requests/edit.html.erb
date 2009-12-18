@@ -1,16 +1,16 @@
-<% form_for @donation_request do |j| %>
+<% form_for @donation_request do |r| %>
   <table>
     <tr>
-      <td><%= j.label :name %></td>
-      <td><%= j.text_field :name %></td>
+      <td><%= r.label :name %></td>
+      <td><%= r.text_field :name %></td>
     </tr>
     <tr>
-      <td><%= j.label :description %></td>
-      <td><%= j.text_area :description %></td>
+      <td><%= r.label :description %></td>
+      <td><%= r.text_area :description %></td>
     </tr>
     <tr>
-      <td><%= j.label :quantity %></td>
-      <td><%= j.text_field :quantity %></td>
+      <td><%= r.label :quantity %></td>
+      <td><%= r.text_field :quantity %></td>
     </tr>
   </table>
   <%= submit_tag 'Update' %>
