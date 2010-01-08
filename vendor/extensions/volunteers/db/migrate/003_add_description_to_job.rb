@@ -4,6 +4,6 @@ class AddDescriptionToJob < ActiveRecord::Migration
   end
 
   def self.down
-    removed_column :jobs, :description
+    remove_column :jobs, :description
   end
 end
