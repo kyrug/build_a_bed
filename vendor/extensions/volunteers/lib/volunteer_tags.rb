@@ -41,13 +41,33 @@ module VolunteerTags
     volunteer = tag.locals.page.last_volunteer
     job = volunteer.job if volunteer
     html = ''
-    html << '<select name="volunteer[job_id]">'
+    html << '<select name="volunteer[job_id]" id="volunteer" onchange="show(this)">'
     Job.all.each do |j|
       html << %{ <option value="#{j.id}"#{' selected' if job}>#{j.name}</option>}
     end
     html << '</select>'
     html
   end
+
+  desc %{
+    Renders a job description field.
+
+    *Usage:*
+    <pre><code><r:volunteer:job_description /></code></pre>
+  }
+  tag 'volunteer:form:job_description' do |tag|
+    volunteer = tag.locals.page.last_volunteer
+    job = volunteer.job if volunteer
+    html = ''
+    Job.all.each do |j|
+      html << "<div id='vol_desc_#{j.id}' style='display:none'>"
+      html << j.description if j.description
+      html << '</div>'
+    end
+    html
+  end
+
+
 
   desc %{
     Renders a submit button for all dis job signup stuff.
