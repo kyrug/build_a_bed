@@ -1,0 +1,109 @@
+<h2>Bed Request</h2>
+<% form_for @br do |br| %>
+  <table>
+    <tr>
+      <td><%= br.label :recipient_first_name %></td>
+      <td><%= @br.recipient_first_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_middle_name %></td>
+      <td><%= @br.recipient_middle_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_last_name %></td> 
+      <td><%= @br.recipient_last_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_dob %></td> 
+      <td><%= @br.recipient_dob %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_address %></td> 
+      <td><%= @br.recipient_address %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_city %></td> 
+      <td><%= @br.recipient_city %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_zip %></td> 
+      <td><%= @br.recipient_zip %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_county %></td> 
+      <td><%= @br.recipient_county %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_school_district %></td> 
+      <td><%= @br.recipient_school_district %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_parent_last_name %></td> 
+      <td><%= @br.recipient_parent_last_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_parent_first_name %></td> 
+      <td><%= @br.recipient_parent_first_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :recipient_phone %></td> 
+      <td><%= @br.recipient_phone %></td>
+    </tr>
+
+    <tr>
+      <td><%= br.label :referral_first_name %></td>
+      <td><%= @br.referral_first_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_middle_name %></td>
+      <td><%= @br.referral_middle_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_last_name %></td>
+      <td><%= @br.referral_last_name %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_title %></td>
+      <td><%= @br.referral_title %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_organization %></td>
+      <td><%= @br.referral_organization %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_address %></td>
+      <td><%= @br.referral_address %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_city %></td>
+      <td><%= @br.referral_city %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_zip %></td>
+      <td><%= @br.referral_zip %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_county %></td>
+      <td><%= @br.referral_county %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_phone %></td>
+      <td><%= @br.referral_phone %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_email %></td>
+      <td><%= @br.referral_email %></td>
+    </tr>
+    <tr>
+      <td><%= br.label :referral_relationship %></td>
+      <td><%= @br.referral_relationship %></td>
+    </tr>
+
+    <tr>
+      <td><%= br.label :comments %></td> 
+      <td><%= @br.comments %></td>
+    </tr>
+
+  </table>
+<% end %>
+
