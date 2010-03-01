@@ -9,6 +9,7 @@ class AddBedRequests < ActiveRecord::Migration
       t.column :recipient_city, :string
       t.column :recipient_zip, :string
       t.column :recipient_county, :string
+      t.column :recipient_school, :string
       t.column :recipient_school_district, :string
       t.column :recipient_parent_first_name, :string
       t.column :recipient_parent_last_name, :string

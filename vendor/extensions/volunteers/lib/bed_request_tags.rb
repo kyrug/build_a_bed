@@ -17,7 +17,7 @@ module BedRequestTags
       </form>}
   end
 
-  %W{recipient_first_name recipient_middle_name recipient_last_name recipient_dob recipient_address recipient_city recipient_zip recipient_county recipient_school_district recipient_parent_first_name recipient_parent_last_name recipient_phone referral_first_name referral_middle_name referral_last_name referral_title referral_organization referral_address referral_city referral_zip referral_county referral_phone referral_email referral_relationship}.each do |method|
+  %W{recipient_first_name recipient_middle_name recipient_last_name recipient_dob recipient_address recipient_city recipient_zip recipient_county recipient_school recipient_school_district recipient_parent_first_name recipient_parent_last_name recipient_phone referral_first_name referral_middle_name referral_last_name referral_title referral_organization referral_address referral_city referral_zip referral_county referral_phone referral_email referral_relationship}.each do |method|
     desc %{
       Renders a #{method} input field
 
