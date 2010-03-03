@@ -35,7 +35,13 @@
     <td><%= donation_request.description %></td>
     <td> <%= donation_request.quantity %></td>
     <td><%= donation_request.quantity_donated %></td>
-    <td><%= link_to('edit', :action => 'edit', :id => donation_request.id) %></td>
+    <td>
+      <%= link_to 'edit', edit_donation_request_path(donation_request) %>
+      <%= link_to 'destroy',
+        donation_request_path(donation_request),
+        :confirm => 'Are you sure?',
+        :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

@@ -55,7 +55,10 @@
         <td> <%= mail_to donation.email %></td>
         <td><%= donation.donation_request.name %></td>
         <td><%= donation.quantity %></td>
-        <td><%= link_to('edit', :action => 'edit', :id => donation.id) %></td>
+        <td>
+          <%= link_to 'edit', edit_donation_path(donation) %>
+          <%= link_to "destroy", donation_path(donation), :confirm => "Are you sure?", :method => :delete %>
+        </td>
       </tr>
     <% end %>
   </tbody>

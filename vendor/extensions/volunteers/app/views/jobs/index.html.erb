@@ -35,7 +35,13 @@
     <td><%= job.description %></td>
     <td> <%= job.quantity %></td>
     <td><%= job.volunteers.count %></td>
-    <td><%= link_to('edit', :action => 'edit', :id => job.id) %></td>
+    <td>
+      <%= link_to 'edit', edit_job_path(job) %>
+      <%= link_to 'destroy',
+        job_path(job),
+        :confirm => 'Are you sure?',
+        :method => :delete %>
+      </td>
   </tr>
 <% end %>
 </table>

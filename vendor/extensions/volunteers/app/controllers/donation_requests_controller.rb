@@ -14,8 +14,11 @@ class DonationRequestsController < ApplicationController
   def update
     @donation_request = DonationRequest.find(params[:id])
     if @donation_request.update_attributes(params[:donation_request])
-      redirect_to :action => :index
+      flash[:info] = 'Donation Request Successfully Updated'
+    else
+      flash[:error] = @donation_request.errors.full_messages.first
     end
+    redirect_to donation_requests_path
   end
 
   # GET /donation_requests
@@ -28,6 +31,12 @@ class DonationRequestsController < ApplicationController
         flash[:error] = @donation_request.errors.full_messages.first
       end
     end
-    redirect_to :action => :index
+    redirect_to donation_requests_path
+  end
+  
+  def destroy
+    @donation_request = DonationRequest.find(params[:id])
+    @donation_request.destroy
+    redirect_to donation_requests_path
   end
 end

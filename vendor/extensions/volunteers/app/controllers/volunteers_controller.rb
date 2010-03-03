@@ -14,8 +14,11 @@ class VolunteersController < ApplicationController
   def update
     @volunteer = Volunteer.find(params[:id])
     if @volunteer.update_attributes(params[:volunteer])
-      redirect_to :action => :index
+      flash[:info] = 'Volunteer Successfully Updated'
+    else
+     flash[:error] = @volunteer.errors.full_messages.first
     end
+    redirect_to volunteers_path
   end
 
   # GET /volunteers
@@ -29,6 +32,12 @@ class VolunteersController < ApplicationController
       end
     end
     puts flash.inspect
-    redirect_to :action => :index
+    redirect_to volunteers_path
+  end
+
+  def destroy
+    @volunteer = Volunteer.find(params[:id])
+    @volunteer.destroy
+    redirect_to volunteers_path
   end
 end

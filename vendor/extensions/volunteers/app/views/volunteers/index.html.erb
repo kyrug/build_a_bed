@@ -49,7 +49,9 @@
         <td> <%= volunteer.phone %></td>
         <td> <%= mail_to volunteer.email %></td>
         <td><%= volunteer.job.name %></td>
-        <td><%= link_to('edit', :action => 'edit', :id => volunteer.id) %></td>
+        <td>
+          <%= link_to 'edit', edit_volunteer_path(volunteer) %>
+          <%= link_to "destroy", volunteer_path(volunteer), :confirm => "Are you sure?", :method => :delete %>
       </tr>
     <% end %>
   </tbody>

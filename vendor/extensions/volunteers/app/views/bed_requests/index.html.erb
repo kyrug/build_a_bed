@@ -12,13 +12,16 @@
   <tbody>
     <% for br in @bed_requests %>
       <tr class="<%= cycle("odd", "even") %>">
-        <td><%= br.recipient_first_name %> <%= br.recipient_last_name %></td>
+        <td>
+          <%= link_to "#{br.recipient_first_name} #{br.recipient_last_name}",
+            bed_request_path(br) %>
+        </td>
         <td><%= br.referral_first_name %> <%= br.referral_last_name %></td>
         <td> <%= br.referral_phone %></td>
         <td> <%= mail_to br.referral_email %></td>
         <td>
-          <%= link_to('edit', :action => 'edit', :id => br.id) %>
-          <%= link_to('show', :action => 'show', :id => br.id) %>
+          <%= link_to 'edit', edit_bed_request_path(br) %>
+          <%= link_to 'destroy', bed_request_path(br), :confirm => 'Are you sure?', :method => :delete  %>
         </td>
       </tr>
     <% end %>
