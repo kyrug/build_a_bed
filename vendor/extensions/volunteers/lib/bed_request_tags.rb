@@ -41,7 +41,7 @@ module BedRequestTags
   tag "bed_request:form:comments" do |tag|
     bed_request = tag.locals.page.last_bed_request
     value = (!bed_request.nil? ? bed_request.send(method) : '')
-    %{<textarea cols="100" name="bed_request[comments]" rows="10" value="#{value}"></textarea>}
+    %{<textarea cols="50" name="bed_request[comments]" rows="10" value="#{value}"></textarea>}
   end
 
   desc %{
