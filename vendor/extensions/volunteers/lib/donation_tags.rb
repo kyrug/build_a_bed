@@ -43,7 +43,7 @@ module DonationTags
     html = ''
     html << '<select name="donation[donation_request_id]">'
     DonationRequest.all.each do |r|
-      html << %{ <option value="#{r.id}"#{' selected' if donation_request}>#{r.name}</option>}
+      html << %{ <option value="#{r.id}"#{' selected' if donation_request}>#{r.name}</option>} unless r.filled?
     end
     html << '</select>'
     html
