@@ -41,11 +41,29 @@ module DonationTags
     donation = tag.locals.page.last_donation
     donation_request = donation.donation_request if donation 
     html = ''
-    html << '<select name="donation[donation_request_id]">'
+    html << '<select name="donation[donation_request_id]" id="donation_request" onchange="show(this)">'
     DonationRequest.all.each do |r|
       html << %{ <option value="#{r.id}"#{' selected' if donation_request}>#{r.name}</option>} unless r.filled?
     end
     html << '</select>'
+    html
+  end
+
+  desc %{
+    Renders a donation description field.
+
+    *Usage:*
+    <pre><code><r:donation:donation_request_description /></code></pre>
+  }
+  tag 'donation:form:donation_request_description' do |tag|
+    donation = tag.locals.page.last_donation
+    description = donation.description if donation
+    html = ''
+    DonationRequest.all.each do |r|
+      html << "<div id='donation_desc_#{r.id}' style='display:none'>"
+      html << r.description if r.description
+      html << '</div>'
+    end
     html
   end
 
